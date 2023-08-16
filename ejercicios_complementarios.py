@@ -50,8 +50,11 @@ nombre_3 = "RAMIRO"
 nombre_3 = nombre_3.lower()
 #print(nombre_3)
 #punto16
+#primer_letra = nombre_3[0].lower()
+#resto_texto = nombre_3[1:]
+#texto_final = primer_letra + resto_texto
+#print(texto_final)
+#habia entendido mal la consigna y me rompi la cabeza para nada
 nombre_3 = "RAMIRO"
-primer_letra = nombre_3[0].lower()
-resto_texto = nombre_3[1:]
-texto_final = primer_letra + resto_texto
-print(texto_final)
+nombre_3 = nombre_3.capitalize()
+#print(nombre_3)
