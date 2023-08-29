@@ -66,4 +66,47 @@ num1=int(input("inrese el primer numero"))
 num2=int(input("inrese el segundo numero"))
 num3=int(input("inrese el tercer numero"))
 if num1 < num2 and num1 < num3:
-    print("numero 1 es el nume")
+    print(f"el numero menor es el {num1}")
+elif num2 < num1 and num2 < num3:
+    print(f"el numero menor es el {num2}")
+elif num3 < num1 and num3 < num2 :
+    print(f"el numero menor es el numero {num3}")
+else:
+    print("los 3 numeros son iguales")
+#8
+
+usuario1 = input("ingrese el usuario: ")
+contraseña1 = input("ingrese la contraseña: ")
+if usuario1 == "Gwenevere" and contraseña1 == "excalibur":
+    print("Usuario y contraseña correctos. Puede ingresar a Camelot")
+else:
+    print("Acceso denegado")
+
+#9
+nombre_curso = input("ingrese su nombre: ")
+genero = input("ingrese su genero (h o m): ")
+
+if genero == "m" :
+    if nombre_curso[0]  <= "m":
+        print("perteneces al grupo a")
+    else:
+        print("preteneces al grupo b")
+elif genero == "h":
+    if nombre_curso[0]  <= "n":
+        print("perteneces al grupo a")
+    else:
+        print("preteneces al grupo b")
+else:
+    print ("error")
+
+#10
+edad_u = int(input("ingrese su edad "))
+
+if edad_u < 4 :
+    print("no debe pagar nada ")
+elif edad_u >= 4 and edad_u < 18 :
+    print("debe pagar 500 pesos")
+else:
+    print("debe pagar 1000 pesos")
+
+#11
