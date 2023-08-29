@@ -1,11 +1,9 @@
-ano_bisiesto = int(input("ingrese un ano: "))
-if ano_bisiesto % 4 == 0:
-    if ano_bisiesto % 100 == 0:
-        if ano_bisiesto % 400 == 0:
-            print("el ano es bisiesto")
-        else:
-            print("el ano no es bisiesto")
-    else:
-        print("el ano es bisiesto")
+horas=int(input("ingrese la cantidad de horas trabajadas: "))
+salario_hora = int ( input ("ingrese el salario por hora: "))
+if horas > 48 :
+    horas_final = 48 - horas
+    horas -=horas_final
+    salario_final = (salario_hora * horas) + ((salario_hora * horas_final) * 1.10)
 else:
-    print("el ano no es bisiesto")
+    salario_final = salario_hora * horas
+print(f"el salario final es de ${salario_final}")
