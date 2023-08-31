@@ -24,7 +24,6 @@ for i in range(5):
         men_cod += list_men[c]
     print(men_cod)
 
-
 # ejercicio 2
 
 num = 1
@@ -56,5 +55,4 @@ while num != 0:
         else:
             print("el numero es inpar")
             contador_inpares += 1
-print(
-    f"la cantidad de digitos pares fue de {contador_pares} y de inpares fue de {contador_inpares}")
+print(f"la cantidad de digitos pares fue de {contador_pares} y de inpares fue de {contador_inpares}")
