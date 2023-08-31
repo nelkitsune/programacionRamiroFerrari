@@ -189,7 +189,7 @@ if dia == "lunes":
     print("hoy es lunes")
 elif dia == "viernes":
     print("hoy es viernes")
-elif dia == "sabado" or dia ="domingo":
+elif dia == "sabado" or dia =="domingo":
     print("hoy es fin de semana")
 elif dia == "martes" or dia =="miercoles" or dia == "jueves":
     print("otro mensaje")
