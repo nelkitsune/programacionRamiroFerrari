@@ -172,3 +172,81 @@ while count < 10:
     fibonacci_1 = fibonacci_2
     fibonacci_2 = fibonacci_temp
     count += 1
+#19
+savings = float(input("ingrese la meta a la que desea ahorrar: "))
+conditional3 = True
+total_saved = 0
+while conditional3:
+    money_deposited = float(input("ingrese la cantidad de dinero que desea ahorrar: "))
+    if money_deposited > 0:
+        total_saved += money_deposited
+    else:
+        print("solo numeros positivos")
+    if total_saved >= savings:
+        print("meta alcansada")
+        conditional3 = False
+#20
+conditional4 = 1
+counter4 = 0
+while conditional4 != 0:
+    conditional4 = int(input("ingrese un numero entero: "))
+    if conditional4 != 0:
+        counter4 += conditional4
+print(f"la suma de los numeros ingresados es {counter4}")
+#21
+conditional5 = 1
+numMayor = 0
+while conditional5 != 0:
+    conditional5 = int(input("ingrese un numero entero: "))
+    if conditional5 != 0:
+        if conditional5 > numMayor:
+            numMayor = conditional5
+print(f"el numero mayor ingresado es: {numMayor}")
+
+#22
+pair_numbers = 0
+while True:
+    numbers = int(input("Ingrese un número entero positivo (o -1 para terminar): "))
+    if numbers == -1:
+        break
+    if numbers % 2 == 0:
+        pair_numbers += 1
+    digit_sum = 0
+    num_temp = abs(numbers)  
+    while num_temp > 0:
+        digito = num_temp % 10
+        digit_sum += digito
+        num_temp //= 10
+    print(f"La suma de los dígitos de {numbers} es {digit_sum}")
+print(f"Se ingresaron {pair_numbers} números pares.")
+#23
+conditional6 = 1
+while conditional6 > 0:
+    conditional6 = int(input("ingrese el valor del producto: "))
+    if conditional6 == 0:
+        break
+print("fin de la ejecucion")
+#24
+conditional7 = 1
+total=0
+while conditional7 > 0:
+    conditional7 = int(input("ingrese el valor del producto: "))
+    if conditional7 > 0:
+        total += conditional7
+    elif conditional7 < 0:
+        print("error ingrese de nuevo el numero")
+    elif conditional7 == 0:
+        break
+if total >= 1000:
+    print(f"felicidades obtuvo un descuento e 10%. el total de la compra es: ${total-(total*0.10)}")
+else:
+    print(f"la cantidad a pagar es de: ${total}")
+#25
+num10 = int(input("Ingrese un número entero positivo: "))
+if num10 < 0:
+    print("El número debe ser positivo.")
+else:
+    factorial = 1
+    for i in range(1, num10 + 1):
+        factorial *= i
+    print(f"El factorial de {num10} es {factorial}")
