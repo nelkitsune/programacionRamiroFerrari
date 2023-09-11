@@ -1,13 +1,10 @@
-conditional7 = 1
-total=0
-while conditional7 > 0:
-    conditional7 = int(input("ingrese el valor del producto: "))
-    if conditional7 > 0:
-        total += conditional7
-    elif conditional7 < 0:
-        print("error ingrese de nuevo el numero")
-    elif conditional7 == 0:
-        break
-if total >= 1000:
-    print(f"felicidades obtuvo un descuento e 10%. el total de la compra es: ${total-(total*0.10)}")
-print("fin de la ejecucion")
+fecha_completa = input("Ingrese su fecha de nacimiento en formato DDMMAAAA: ")
+if len(fecha_completa) == 8:
+    # Separar la fecha en día, mes y año.
+    dia = int(fecha_completa[:2])
+    mes = int(fecha_completa[2:4])
+    anio = int(fecha_completa[4:])
+    fecha_formateada = f"{dia:02d}/{mes:02d}/{anio}"
+    print(f"Fecha de nacimiento: {fecha_formateada}")
+else:
+    print("Formato de fecha incorrecto. Debe tener 8 caracteres (DDMMAAAA).")

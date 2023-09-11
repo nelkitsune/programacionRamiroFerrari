@@ -40,7 +40,7 @@ else :
     print("Voto incorrecto porfavor reinicie el programa")
 #5
 letra = input("ingrese UNA letra: ")
-letra.upper()
+letra =letra.upper()
 validar = len(letra)
 if validar > 1:
     print("ocurrio un error")
@@ -110,7 +110,32 @@ else:
     print("debe pagar 1000 pesos")
 
 #11
-
+opcion_pizza = input("desea una pizza vegetariana(a) o una pizza no vegetariana(b): ")
+opcion_pizza = opcion_pizza.lower()
+if opcion_pizza == "a":
+    opcion_pizza_ele = "vegetariana"
+    opcion_ingrediente = input("ingrese uno de los siguientes ingredientes: tofu(a), pimiento(b).: ")
+    opcion_ingrediente = opcion_ingrediente.lower()
+    if opcion_ingrediente == "a":
+        ingrediente = "tofu"
+    elif opcion_ingrediente == "b":
+        ingrediente = "pimiento"
+    else:
+        print("ocurrio un error")
+elif opcion_pizza == "b":
+    opcion_pizza_ele = "no vegetariana"
+    opcion_ingrediente = input("ingrese uno de los siguientes ingredientes: Peperoni(a), Jamó(b), Salmón(C).: ")
+    opcion_ingrediente = opcion_ingrediente.lower()
+    if opcion_ingrediente == "a":
+        ingrediente = "peperoni"
+    elif opcion_ingrediente == "b":
+        ingrediente = "jamon"
+    elif opcion_ingrediente == "c":
+        ingrediente = "salmon"
+    else:
+        print("ocurrio un error")
+print(f"la pizza es {opcion_pizza_ele} y tiene {ingrediente}, queso y salsa")
+"""
 ingrediente_pizza = input("desea su pizza con Pimiento, tofu, peperoni, jamon y/o salmon:  ")
 ingrediente_pizza= ingrediente_pizza.lower()
 if ingrediente_pizza == "pimiento" or ingrediente_pizza == "tofu":
@@ -119,7 +144,7 @@ elif ingrediente_pizza== "peperoni" or ingrediente_pizza== "jamon" or ingredient
     print("la pizza no es vegetaria")
 else:
     print("hubo un error")
-
+"""
 #12
 ano_actual = int(input("ingrese al año actual: "))
 ano_ingresado = int(input("ingrese un año para averiguar cuanto falta o cuanto paso"))
@@ -151,7 +176,16 @@ else:
     print("no se puede inngresar valores nulos")
 
 #14
-#na ni idea
+a = float(input("Ingrese el coeficiente 'a': "))
+b = float(input("Ingrese el coeficiente 'b': "))
+if a == 0:
+    if b == 0:
+        print("La ecuación tiene infinitas soluciones (todos los números son solución).")
+    else:
+        print("La ecuación no tiene solución.")
+else:
+    x = -b / a
+    print(f"La solución de la ecuación {a}x + {b} = 0 es x = {x:.2f}")
 
 #15
 pregunta = input("ingrese t si quieres saber le area de un triangulo o ingrese c para saber el area de un circulo: ")
@@ -180,7 +214,10 @@ elif opcion == 2 :
 elif opcion == 3 :
     print(f"el resultado es {numa - numb}")
 elif opcion == 4 :
-    print(f"el resultado es {numa / numb}")
+    if numb == 0:
+        print("No se puede dividir entre cero")
+    else: 
+        print(f"el resultado es {numa / numb}")
 
 #17
 dia = input("ingrese un dia: ")
@@ -197,23 +234,29 @@ else:
     print("error")
 
 #18
-horas=int(input("ingrese la cantidad de horas trabajadas: "))
-salario_hora = int ( input ("ingrese el salario por hora: "))
-if horas > 48 :
-    horas_final = 48 - horas
-    horas -=horas_final
-    salario_final = (salario_hora * horas) + ((salario_hora * horas_final) * 1.10)
+horas_trabajadas = float(input("Ingrese el total de horas trabajadas en el mes: "))
+salario_por_hora = float(input("Ingrese el salario por hora: "))
+jornada_minima = 48
+if horas_trabajadas > jornada_minima:
+    horas_extras = horas_trabajadas - jornada_minima
+    salario_total = (jornada_minima * salario_por_hora) + (horas_extras * salario_por_hora * 1.1)
 else:
-    salario_final = salario_hora * horas
-print(f"el salario final es de ${salario_final}")
+    horas_extras = 0
+    salario_total = horas_trabajadas * salario_por_hora
+print(f"Horas extras trabajadas: {horas_extras:.2f} horas")
+print(f"Salario total: ${salario_total:.2f}")
 
 #19
-cantidad = int(input("ingrese la cantidad de lapices que quiere comprar: "))
-if cantidad >= 1000 :
-    print(f"el costo total es de {(cantidad * 60)*1.07}")
-else:
-    print(f"el costo final es ")
 
+cantidad_lapices = int(input("Ingrese la cantidad de lápices a comprar: "))
+costo_por_lapiz = 60
+costo_total = cantidad_lapices * costo_por_lapiz
+if cantidad_lapices >= 1000:
+    descuento = 0.07 * costo_total
+    costo_total_con_descuento = costo_total - descuento
+    print(f"Costo total con descuento (7%): ${costo_total_con_descuento:.2f}")
+else:
+    print(f"Costo total sin descuento: ${costo_total:.2f}")
 #20
 
 nota_a = int(input("ingrese la primera nota: "))
