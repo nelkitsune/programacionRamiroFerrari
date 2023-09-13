@@ -1,29 +1,18 @@
-print("bienvenido a su cuenta de banco.")
-deposit = 0
 while True:
-    option = (input("ingrese D para depositar R para retirar. Para finalizar deje el campo vacio: ").upper())
-    if option == "D":
-        while True:
-            entered = int(input("ingrese la cantidad que desea meter: $"))
-            if entered <= 0:
-                print("Ingrese un valor mayor a 0 ")
-                continue
-            else:
-                deposit += entered 
-            option_deposit = input("ingrese A para seguir en deposito o B para volver al menu: ").upper()
-            if option_deposit == "A":
-                continue
-            elif option_deposit == "B":
-                print("volviendo al menu")
-                break
-            else:
-                print("opcion incorrecta, volviendo al menu")
-                break
-    elif option == "R":
-        print("b")
-    elif option == "":
-        print("c")
+    print("Menú de opciones:")
+    print("1. Opción 1")
+    print("2. Opción 2")
+    print("3. Opción 3")
+    print("0. Salir")
+    opcion = input("Seleccione una opción: ")
+    if opcion == "1":
+        print("Ha elegido la Opción 1.")
+    elif opcion == "2":
+        print("Ha elegido la Opción 2.")
+    elif opcion == "3":
+        print("Ha elegido la Opción 3.")
+    elif opcion == "0":
+        print("Saliendo del programa.")
         break
     else:
-        print("opcion ingresada incorrecta")
-print(deposit)
+        print("Opción no válida. Por favor, elija una opción válida.")
