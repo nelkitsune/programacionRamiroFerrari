@@ -1,13 +1,12 @@
-conditional7 = 1
-total=0
-while conditional7 > 0:
-    conditional7 = int(input("ingrese el valor del producto: "))
-    if conditional7 > 0:
-        total += conditional7
-    elif conditional7 < 0:
-        print("error ingrese de nuevo el numero")
-    elif conditional7 == 0:
-        break
-if total >= 1000:
-    print(f"felicidades obtuvo un descuento e 10%. el total de la compra es: ${total-(total*0.10)}")
-print("fin de la ejecucion")
+savings = float(input("ingrese la meta a la que desea ahorrar: "))
+conditional3 = True
+total_saved = 0
+while conditional3:
+    money_deposited = float(input("ingrese la cantidad de dinero que desea ahorrar: "))
+    if money_deposited > 0:
+        total_saved += money_deposited
+    else:
+        print("solo numeros positivos")
+    if total_saved >= savings:
+        print("meta alcansada")
+        conditional3 = False
