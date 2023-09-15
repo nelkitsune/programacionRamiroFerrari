@@ -1,10 +1,10 @@
 #Ramiro Ferrari comicion 3
 #inicio del codigo y inicio de variables de apoyo
 name =  input("ingrese su nombre: ")
-cont =0
-odd_number = 0
 #inicio del bucle while principal
 while True:
+    cont =0
+    odd_number = 0
     number_max=0
     #menu 
     print(f"bienvenido {name} seleccione el juego que decea jugar")
