@@ -84,3 +84,62 @@ radius = float(input("Ingrese el radio de la circunferencia: "))
 area, perimeter = calculate_circle_area_perimeter(radius)
 print(f"Área de la circunferencia: {area}")
 print(f"Perímetro de la circunferencia: {perimeter}")
+#9
+import tp5Funciones
+attempts = 0
+condition2 = True
+while condition2== True:
+    if attempts > 3:
+        print("numero de intentos alcanzados, intentelo mas tarde")
+        break
+    if attempts != 0:
+        print(f"le quedan {3-attempts} intento/s ")
+    login = input("ingrese su usuario: ")
+    pasword = input("ingrese su contrasenia: ")
+    attempts , condition2 = tp5Funciones.login(login,pasword,attempts,condition2)
+
+#10
+import tp5Funciones
+shopping_cart = {
+    "producto1": {"precio": 100, "descuento": 10}, "producto2": {"precio": 50, "descuento": 5}, "producto3": {"precio": 200, "descuento": 15}}
+precio_total = tp5Funciones.dicount_cart(shopping_cart)
+print(f"Precio total con descuentos: {precio_total}")
+#11
+import tp5Funciones
+numeros = [1, 2, 3, 4, 5]
+resultados = tp5Funciones.punto11(tp5Funciones.punto11_2, numeros)
+print(resultados)
+
+#12
+import tp5Funciones
+
+word3 = input("ingrese una frase: ")
+word3_dic=tp5Funciones.frase(word3)
+print(word3_dic)
+
+#13
+import tp5Funciones
+vector = [3, 4]
+modulo = tp5Funciones.vectors(vector)
+print(f"El módulo del vector {vector} es {modulo}")
+
+#14
+import tp5Funciones
+
+numero = int(input("Ingrese un número entero: "))
+if tp5Funciones.prim(numero):
+    print(f"{numero} es un número primo.")
+else:
+    print(f"{numero} no es un número primo.")
+
+#15
+import tp5Funciones
+tp5Funciones.main()
+
+#16
+import tp5Funciones
+tp5Funciones.main2()
+
+#17
+import tp5Funciones
+tp5Funciones.main3()
