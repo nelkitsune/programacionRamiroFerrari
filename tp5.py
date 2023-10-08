@@ -81,7 +81,7 @@ print(f"el resultaod menor es: {resultB}")
 
 #8
 radius = float(input("Ingrese el radio de la circunferencia: "))
-area, perimeter = calculate_circle_area_perimeter(radius)
+area, perimeter = tp5Funciones.calculate_circle_area_perimeter(radius)
 print(f"Área de la circunferencia: {area}")
 print(f"Perímetro de la circunferencia: {perimeter}")
 #9
@@ -134,12 +134,12 @@ else:
 
 #15
 import tp5Funciones
-tp5Funciones.main()
+tp5Funciones.factorialin()
 
 #16
 import tp5Funciones
-tp5Funciones.main2()
+tp5Funciones.frecuenci()
 
 #17
 import tp5Funciones
-tp5Funciones.main3()
+tp5Funciones.main()

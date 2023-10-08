@@ -40,19 +40,18 @@ def espacios_word (word2):
         resultS += word2_list[i]+" "
     return  resultS
 
-def list_max_men (list_num, option):
-    cant = len(list_num)
+def list_max_men(list_num, option):
+    if not list_num:
+        return None
     if option == "a":
-        result = -10000000000000000000000000000000000
-        for i in range(0,cant, 1):
-            if list_num[i] > result:
-                result = list_num[i]
-    if option == "b":
-        result = 10000000000000000000000000000000000000
-        for i in range(0,cant , 1):
-            if list_num[i] < result:
-                result = list_num[i]
+        result = max(list_num)
+    elif option == "b":
+        result = min(list_num)
+    else:
+        return None  
+    
     return result
+
 
 def calculate_circle_area_perimeter(radius):
     area = math.pi * radius**2
@@ -120,7 +119,7 @@ def calculate_factorial(number):
     for i in range(1, number + 1):
         factorial *= i
     return factorial
-def main():
+def factorialin():
     total_count = 0
     
     while True:
@@ -147,24 +146,18 @@ def calculate_frequency(number, digit):
             frequency += 1
         number //= 10
     return frequency
-def main2():
-    number = input("Ingrese un número entero: ")
-    digit = input("Ingrese un dígito: ")
-
-    if number.isdigit() and digit.isdigit():
-        number = int(number)
-        digit = int(digit)
-
-        if 0 <= digit <= 9:
-            frequency = calculate_frequency(number, digit)
-            print(f"El dígito {digit} aparece {frequency} veces en el número {number}.")
-        else:
-            print("Ingrese un dígito válido (0-9).")
+def frecuenci():
+    number = int(input("Ingrese un número entero: "))
+    digit = int(input("Ingrese un dígito: "))
+    if 0 <= digit <= 9:
+        frequency = calculate_frequency(number, digit)
+        print(f"El dígito {digit} aparece {frequency} veces en el número {number}.")
     else:
-        print("Debe ingresar números enteros válidos.")
+        print("Ingrese un dígito válido (0-9).")
 
 
-def main3():
+
+def main():
     highest_number = 0
     while True:
         try:
