@@ -49,3 +49,30 @@ for i in range(0,num_list_long,1) :
     else:
         num_list_tuplas_repetidas.append((num_list[i],rep)) 
 print(num_list_tuplas_repetidas)
+
+#6
+primary_level = []
+secondary_level =[]
+while True:
+    name = input("ingrese el nombre de pila del alumno de primaria: ").lower()
+    if name == "x":
+        break
+    else:
+        primary_level.append(name)
+while True:
+    name = input("ingrese el nombre de pila del alumno de secundario: ").lower()
+    if name == "x":
+        break
+    else:
+        secondary_level.append(name)
+date = len(primary_level)
+new_list= []
+for i in range(0,date,1):
+    if primary_level[i]in secondary_level:
+        continue
+    else:
+        new_list.append(primary_level[i])
+date = len(secondary_level)
+for i in range(0,date,1):
+    new_list.append(secondary_level[i])
+print(new_list)
