@@ -65,6 +65,7 @@ while True:
         break
     else:
         secondary_level.append(name)
+"""
 date = len(primary_level)
 new_list= []
 for i in range(0,date,1):
@@ -76,3 +77,146 @@ date = len(secondary_level)
 for i in range(0,date,1):
     new_list.append(secondary_level[i])
 print(new_list)
+"""
+list_prim_sec = set(primary_level)
+list_prim_sec.update(secondary_level)
+print( list_prim_sec)
+name_rep = set(primary_level) & set(secondary_level)
+print("\nNombres que se repiten entre nivel primario y secundario:")
+for name in name_rep:
+    print(name)
+name_rep_no = set(primary_level) - set(secondary_level)
+print("\nNombres de nivel primario que no se repiten en nivel secundario:")
+for name in name_rep_no:
+    print(name)
+
+#7
+character_count = {}
+strings_processed = 0
+while strings_processed < 50:
+    entrada = input("Ingrese un string (o 'x' para salir): ")
+    if entrada == 'x':
+        break
+    for caracter in entrada:
+        if caracter in character_count:
+            character_count[caracter] += 1
+        else:
+            character_count[caracter] = 1
+    strings_processed += 1
+print("\nCantidad total de ocurrencias de cada carácter:")
+for caracter, cantidad in character_count.items():
+    print(f"'{caracter}': {cantidad}")
+#8
+championship = [
+    [0,4,1,0,3,3,2,1,3,2]
+    [0,0,2,3,1,0,0,2,3,4]
+    [2,1,0,0,2,2,0,4,2,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,0,0,0,0,0,0,0]
+    ]
+#9
+import random
+existe_valor = True
+value_to_be_searched = "______________"
+table = [
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"],
+["______________", "______________", "______________", "______________", "______________"]
+]
+deck_of_cards = [
+    "As de Corazones", "2 de Corazones", "3 de Corazones", "4 de Corazones", "5 de Corazones",
+    "6 de Corazones", "7 de Corazones", "8 de Corazones", "9 de Corazones", "10 de Corazones",
+    "As de Diamantes", "2 de Diamantes", "3 de Diamantes", "4 de Diamantes", "5 de Diamantes",
+    "6 de Diamantes", "7 de Diamantes", "8 de Diamantes", "9 de Diamantes", "10 de Diamantes",
+    "As de Corazones", "2 de Corazones", "3 de Corazones", "4 de Corazones", "5 de Corazones",
+    "6 de Corazones", "7 de Corazones", "8 de Corazones", "9 de Corazones", "10 de Corazones",
+    "As de Diamantes", "2 de Diamantes", "3 de Diamantes", "4 de Diamantes", "5 de Diamantes",
+    "6 de Diamantes", "7 de Diamantes", "8 de Diamantes", "9 de Diamantes", "10 de Diamantes",
+]
+random.shuffle(deck_of_cards)
+mat_memo=[
+    [deck_of_cards[0],deck_of_cards[1],deck_of_cards[2],deck_of_cards[3],deck_of_cards[4]],
+    [deck_of_cards[5],deck_of_cards[6],deck_of_cards[7],deck_of_cards[8],deck_of_cards[9]],
+    [deck_of_cards[10],deck_of_cards[11],deck_of_cards[12],deck_of_cards[13],deck_of_cards[14]],
+    [deck_of_cards[15],deck_of_cards[16],deck_of_cards[17],deck_of_cards[18],deck_of_cards[19]],
+    [deck_of_cards[20],deck_of_cards[21],deck_of_cards[22],deck_of_cards[23],deck_of_cards[24]],
+    [deck_of_cards[25],deck_of_cards[26],deck_of_cards[27],deck_of_cards[28],deck_of_cards[29]],
+    [deck_of_cards[30],deck_of_cards[31],deck_of_cards[32],deck_of_cards[33],deck_of_cards[34]],
+    [deck_of_cards[35],deck_of_cards[36],deck_of_cards[37],deck_of_cards[38],deck_of_cards[39]]
+]
+print (mat_memo)
+while existe_valor == True:
+    for row in table:
+        for elemento in row:
+            print(elemento, end='\t')
+        print()
+    option1 = int (input("ingrese la fila de primera carta que desea ver (esta tabla va de 0 a 4 de columna y de 0 a 7 de fila): "))
+    option1b = int (input("ingrese la columna de la primera carta que desea ver (esta tabla va de 0 a 4 de columna y de 0 a 7 de fila): "))
+    option2 = int (input("ingrese la fila de segunda carta que desea ver (esta tabla va de 0 a 4 de columna y de 0 a 7 de fila): "))
+    option2b = int (input("ingrese la columna de la segunda carta que desea ver (esta tabla va de 0 a 4 de columna y de 0 a 7 de fila): "))
+    if (option1 >= 0 and option1 <=7) and (option1b >= 0 and option1b <=4):
+        if (option2 >= 0 and option2 <=7) and (option2b >= 0 and option2b <=4):
+            if mat_memo[option1][option1b] == mat_memo[option2][option2b]:
+                print("las cartas son iguales")
+                table [option1][option1b] = mat_memo[option1][option1b]
+                table [option2][option2b] = mat_memo[option1][option1b]
+            else:
+                print("las cartas no son iguales")
+        else:
+            print("error en el ingreso de datos")
+            continue
+    else:
+        print("error en el ingreso de datos")
+        continue
+    for i in table:
+        for e in i:
+            if e == value_to_be_searched:
+                existe_valor = True  
+                break
+            else:
+                existe_valor = False
+#10
+def get_main_diagonal(matrix):
+    main_diagonal = []
+    for i in range(len(matrix)):
+        main_diagonal.append(matrix[i][i])
+    return main_diagonal
+
+def get_reverse_diagonal(matrix):
+    reverse_diagonal = []
+    for i in range(len(matrix)):
+        reverse_diagonal.append(matrix[i][len(matrix) - 1 - i])
+    return reverse_diagonal
+
+matriz_cuadrada = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+diagonal_principal = get_main_diagonal(matriz_cuadrada)
+diagonal_inversa = get_reverse_diagonal(matriz_cuadrada)
+
+print("Diagonal Principal:", diagonal_principal)
+print("Diagonal Inversa:", diagonal_inversa)
+#11
+
+currencies = {'Euro': '€', 'Dollar': '$', 'Yen': '¥'}
+
+divisa = input("Ingrese el nombre de una divisa: ")
+
+if divisa in currencies:
+    symbol = currencies[divisa]
+    print(f"El símbolo de {divisa} es {symbol}")
+else:
+    print("La divisa ingresada no está en el diccionario")
