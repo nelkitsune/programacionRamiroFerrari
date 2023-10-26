@@ -56,3 +56,30 @@ def replicate(list, n):
     else:
         return [list[0]] * n + replicate(list[1:], n)
 
+def K(n, p):
+    if n == 0:
+        return 0
+    else:
+        return p + K(n - 1, p)
+
+def pascal(n, k):
+    if k == 0 or k == n:
+        return 1
+    else:
+        return pascal(n - 1, k - 1) + pascal(n - 1, k)
+
+def combinaciones(lista, k):
+    if k == 0:
+        print(" ")
+    else:
+        for caracter in lista:
+            combinaciones(lista, k - 1)
+            print(caracter, end="")
+
+def medidas_hoja_A(N):
+    if N == 1:
+        return (841, 1189)
+    else:
+        ancho_A_ant = medidas_hoja_A(N - 1)[0]
+        largo_A_ant = medidas_hoja_A(N - 1)[1]
+    return (ancho_A_ant // 2, largo_A_ant)
